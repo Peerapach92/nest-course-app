@@ -17,4 +17,8 @@ export class AppController {
   getJson(){
       return this.appService.getJSON();
     }
+    @Get('/github')
+    getgithub(){
+        return this.appService.getgit();
+      }
 }
