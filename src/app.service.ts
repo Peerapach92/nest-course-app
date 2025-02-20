@@ -18,5 +18,13 @@ export class AppService {
       age:'18 year old',
     }
   }
+  getgit(){
+    return{
+      name:'Git and github using',
+    }
+  }
+  getpost(): string {
+    return 'we use post u naja';
+  }
 }
 
