@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 import { GlobalHelperService } from 'src/shared/global-helper/global-helper.service';
 import { UtilityService } from './shared/utility/utility.service';
@@ -10,10 +10,12 @@ export class AppController {
     private readonly globalHelperService: GlobalHelperService,
   ){}
 
-  @Get()  
-  getHello(): string {
-    return this.appService.getHello();
+  @Get()
+  @Render('index')
+  getHello() {
+    return this.appService.getHello();  
   }
+  
   @Get('/showname')
   getname(): string {
     return this.appService.getName();
