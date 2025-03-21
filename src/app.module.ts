@@ -21,6 +21,7 @@ import { AuthUser } from './auth/entities/auth.entity';
 import { AdminUser } from './admin/entities/admin-user.entity';
 import { UserInfo } from './user-info/entities/user-info.entity';
 import { Customer } from './customer/entities/customer.entity';
+import { CartModule } from './cart/cart.module';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { Customer } from './customer/entities/customer.entity';
     CustomerModule,
     AuthModule,
     AdminModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
