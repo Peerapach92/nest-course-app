@@ -21,10 +21,10 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Assuming response contains a token instead of a username
+                    // Save access token and redirect
                     localStorage.setItem("loggedIn", "true");
-                    localStorage.setItem("token", data.token); // Save token instead of username
-                    window.location.href = "showname.html"; // Redirect to your desired page
+                    localStorage.setItem("token", data.access_token); // Use correct key
+                    window.location.href = "showname.html"; // Redirect to your user page
                 } else {
                     alert(data.message || 'Login failed');
                 }
@@ -41,18 +41,23 @@
             <div class="modal-left">
                 <h1 class="modal-title">Welcome!</h1>
                 <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
+                
                 <div class="input-block">
                     <label for="email" class="input-label">Email</label>
                     <input type="email" name="email" id="email" placeholder="Email" required>
                 </div>
+
                 <div class="input-block">
                     <label for="password" class="input-label">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
+
                 <div class="modal-buttons">
                     <a href="#">Forgot your password?</a>
                     <button class="modal-button" onclick="login()">Click here to login</button>
                 </div>
+
+                <!-- Link to Registration Page -->
                 <p class="sign-up">Don't have an account? <a href="/auth/register">Sign up now</a></p>
             </div>
         </div>
